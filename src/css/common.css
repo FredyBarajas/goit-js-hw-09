@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+  position: relative;
+}
+
+img {
+  display: block;
+  max-width: 80%;
+}
+
+.btn {
+  padding: 20px;
+  border-color: aliceblue;
+  background-color: aliceblue;
+  border-radius: 10%;
+}
+.btns {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
