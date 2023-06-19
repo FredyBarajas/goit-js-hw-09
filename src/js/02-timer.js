@@ -9,6 +9,8 @@ const dataHours = document.querySelector('[data-hours]');
 const dataMinutes = document.querySelector('[data-minutes]');
 const dataSeconds = document.querySelector('[data-seconds]');
 start.disabled = true;
+let timerId; // Declarar la variable timerId
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -26,7 +28,7 @@ const options = {
 };
 
 const dateSelected = flatpickr(selector, options);
-const timerId = 0;
+
 start.addEventListener('click', () => {
   const selected = Date.parse(selector.value);
   const totalTime = selected - new Date();
