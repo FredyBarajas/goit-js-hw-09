@@ -15,6 +15,7 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
+    console.log(selectedDates[0]);
     if (selectedDates[0] > Date.now()) {
       start.disabled = false;
     } else {
@@ -32,6 +33,7 @@ start.addEventListener('click', () => {
 
   timerId = setInterval(() => {
     remaining = selected - Date.now();
+    console.log(convertMs(remaining));
   }, 1000);
 
   selector.disabled = true;
@@ -39,8 +41,6 @@ start.addEventListener('click', () => {
   setTimeout(() => {
     clearInterval(timerId);
     Notify.success('¡completed!');
-    selector.disabled = false;
-    start.disabled = true;
   }, remaining);
 });
 
