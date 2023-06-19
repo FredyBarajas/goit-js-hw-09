@@ -25,7 +25,7 @@ const options = {
   },
 };
 
-dateSelected = flatpickr(selector, options);
+const dateSelected = flatpickr(selector, options);
 
 start.addEventListener('click', () => {
   const selected = Date.parse(selector.value);
