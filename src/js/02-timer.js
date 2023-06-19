@@ -26,24 +26,22 @@ const options = {
 };
 
 const dateSelected = flatpickr(selector, options);
-
+const timerId = 0;
 start.addEventListener('click', () => {
   const selected = Date.parse(selector.value);
   const totalTime = selected - new Date();
-
-  timerId = setInterval(() => {
-    const remaining = selected - Date.now();
-    console.log(convertMs(remaining));
-  }, 1000);
-
-  selector.disabled = true;
-
   setTimeout(() => {
     clearInterval(timerId);
     Notify.success('¡completed!');
     selector.disabled = false;
     start.disabled = true;
   }, totalTime);
+  timerId = setInterval(() => {
+    const remaining = selected - Date.now();
+    console.log(convertMs(remaining));
+  }, 1000);
+
+  selector.disabled = true;
 });
 
 function convertMs(ms) {
