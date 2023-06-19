@@ -29,10 +29,10 @@ const dateSelected = flatpickr(selector, options);
 
 start.addEventListener('click', () => {
   const selected = Date.parse(selector.value);
-  let remaining = selected - Date.now();
+  const totalTime = selected - new Date();
 
   timerId = setInterval(() => {
-    remaining = selected - Date.now();
+    const remaining = selected - Date.now();
     console.log(convertMs(remaining));
   }, 1000);
 
@@ -43,7 +43,7 @@ start.addEventListener('click', () => {
     Notify.success('¡completed!');
     selector.disabled = false;
     start.disabled = true;
-  }, remaining);
+  }, totalTime);
 });
 
 function convertMs(ms) {
