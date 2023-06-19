@@ -41,6 +41,8 @@ start.addEventListener('click', () => {
   setTimeout(() => {
     clearInterval(timerId);
     Notify.success('¡completed!');
+    selector.disabled = false;
+    start.disabled = true;
   }, remaining);
 });
 
